@@ -2,13 +2,28 @@
   height: 80px;
 }
 
-.sJumbotron {
-  height: 150px;
-  background-color: blue;
-}
-
 .signUpButton {
   margin-right: 30px;
+}
+
+.sJumbotron {
+  height: 435px;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(180deg, rgb(0, 50, 160) 0%, rgba(0, 50, 160, 0.35) 100%);
+  color: white;
+}
+
+.jumbotronLeftSide {
+  padding-right: 20%;
+}
+
+.jumbotronHeading {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.jumbotronText {
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=index.module.css.map */
