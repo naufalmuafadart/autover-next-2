@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface ButtonInterface {
-  text: String;
-  className?: String;
+  text: string;
+  className?: string;
 }
 
 export default function Button(props: Partial<ButtonInterface>) {
