@@ -1,6 +1,14 @@
 .sNavbar {
   height: 80px;
-  background-color: red;
+}
+
+.sJumbotron {
+  height: 150px;
+  background-color: blue;
+}
+
+.signUpButton {
+  margin-right: 30px;
 }
 
 /*# sourceMappingURL=index.module.css.map */

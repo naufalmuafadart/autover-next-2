@@ -1,0 +1,13 @@
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=layouting.css.map */

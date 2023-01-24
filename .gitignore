@@ -37,3 +37,6 @@ next-env.d.ts
 
 #JetBrain IDE
 /.idea
+
+# CSS map
+*.css.map

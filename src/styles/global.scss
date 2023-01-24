@@ -1,0 +1,12 @@
+@use "./library/layouting";
+@use "./library/sizing";
+@use "./library/button";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 0 55px;
+}
