@@ -5,6 +5,13 @@ import HTMLHead from '@/components/Head';
 import Button from '@/components/atom/Button';
 
 export default function Home() {
+  const onLoginButtonClick = () => {
+    window.location.href = '/login';
+  };
+  const onSignUpButtonClick = () => {
+    window.location.href = '/signup';
+  };
+
   return (
     <>
       <HTMLHead title="Autover" />
@@ -14,8 +21,8 @@ export default function Home() {
             <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
           </div>
           <div className="right-side">
-            <Button text="Masuk" className={style.signUpButton} />
-            <Button text="Daftar" className="button-secondary" />
+            <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
+            <Button text="Daftar" className="button-secondary" onClick={onSignUpButtonClick} />
           </div>
         </nav>
       </section>
