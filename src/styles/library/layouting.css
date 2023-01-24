@@ -10,4 +10,24 @@
   justify-content: space-between;
 }
 
+.jc-start {
+  justify-content: flex-start;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.d-grid {
+  display: grid;
+}
+
 /*# sourceMappingURL=layouting.css.map */
