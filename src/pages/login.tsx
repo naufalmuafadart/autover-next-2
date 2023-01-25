@@ -24,7 +24,7 @@ export default function Login() {
           {/* eslint-disable-next-line jsx-a11y/img-redundant-alt,@next/next/no-img-element */}
           <img src="/images/img-login.png" alt="image login" className={style.image} />
         </div>
-        <div className={style.rightSide}>
+        <div className={`${style.rightSide} ${style.rightSideLogin}`}>
           <form className="d-flex flex-column ai-center">
             <div className={`${style.brand} d-flex jc-start ai-center`}>
               <Image src="/images/logo.png" alt="Logo" width={70} height={70} className={style.logo} />
