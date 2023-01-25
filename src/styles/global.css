@@ -12,4 +12,8 @@ h1, p {
   padding: 0;
 }
 
+#__next > section {
+  margin-bottom: 85px;
+}
+
 /*# sourceMappingURL=global.css.map */

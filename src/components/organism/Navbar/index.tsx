@@ -3,7 +3,7 @@ import Image from 'next/image';
 import style from '@/styles/component/organism/navbar.module.css';
 import Button from '@/components/atom/Button';
 
-export default function index() {
+export default function Navbar() {
   const onLoginButtonClick = () => {
     window.location.href = '/login';
   };
@@ -19,7 +19,7 @@ export default function index() {
         </div>
         <div className="right-side">
           <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
-          <Button text="Daftar" className="button-secondary" onClick={onSignUpButtonClick} />
+          <Button text="Daftar" onClick={onSignUpButtonClick} isSecondary />
         </div>
       </nav>
     </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import HTMLHead from '@/components/Head';
 import Navbar from '../components/organism/Navbar';
 import Jumbotron from '../components/organism/Jumbotron';
+import Tutorial from "@/components/organism/Tutorial";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <HTMLHead title="Autover" />
       <Navbar />
       <Jumbotron />
+      <Tutorial />
     </>
   );
 }
