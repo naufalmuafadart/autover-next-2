@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,7 +16,7 @@ h1, p {
   padding: 0;
 }
 
-#__next > section {
+#mainDocument > section {
   margin-bottom: 85px;
   padding: 0 55px;
 }
