@@ -3,6 +3,7 @@ import HTMLHead from '@/components/Head';
 import Navbar from '../components/organism/Navbar';
 import Jumbotron from '../components/organism/Jumbotron';
 import Tutorial from "@/components/organism/Tutorial";
+import SearchCar from "@/components/organism/SearchCar";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <Jumbotron />
       <Tutorial />
+      <SearchCar />
     </>
   );
 }
