@@ -7,7 +7,7 @@ import Button from '@/components/atom/Button';
 
 const michroma = localFont({ src: './font/Michroma/Michroma-Regular.ttf' });
 
-export default function Login() {
+export default function Signup() {
   useEffect(() => {
     const body = document.getElementsByTagName('body')[0];
     body.style.backgroundColor = 'blue';
@@ -18,7 +18,7 @@ export default function Login() {
 
   return (
     <>
-      <Head title="Login" />
+      <Head title="Sign Up" />
       <div className={style.container}>
         <div className={style.leftSide}>
           {/* eslint-disable-next-line jsx-a11y/img-redundant-alt,@next/next/no-img-element */}
@@ -31,18 +31,36 @@ export default function Login() {
               <p className={`${michroma.className} ${style.brandText}`}>AUTOVER</p>
             </div>
 
-            <h1 className={style.h1}>Login</h1>
+            <h1 className={style.h1}>Sign Up</h1>
+
+            <div className="form-group group-column">
+              <label htmlFor="inputFullName">Nama lengkap</label>
+              <input type="email" id="inputFullName" name="full_name" required />
+              <small>Nama lengkap salah</small>
+            </div>
+
+            <div className="form-group group-column">
+              <label htmlFor="inputPhoneNumber">Nomor Telepon</label>
+              <input type="tel" id="inputPhoneNumber" name="phone_number" required />
+              <small>Nomor telepon salah</small>
+            </div>
 
             <div className="form-group group-column">
               <label htmlFor="inputEmail">Email</label>
-              <input type="email" id="inputEmail" name="email" required />
+              <input type="email" id="inputEmail" required />
               <small>Email salah</small>
             </div>
 
             <div className="form-group group-column">
               <label htmlFor="inputPassword">Password</label>
-              <input type="email" id="inputPassword" name="password" required />
+              <input type="email" id="inputPassword" required />
               <small>Password salah</small>
+            </div>
+
+            <div className="form-group group-column">
+              <label htmlFor="inputRetypePassword">Ulangi Password</label>
+              <input type="email" id="inputRetypePassword" required />
+              <small>Password tidak cocok</small>
             </div>
 
             <Button text="Login" className={`${style.btnSubmit} w-100`} />

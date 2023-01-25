@@ -18,6 +18,7 @@
   background-color: white;
   height: 100vh;
   padding: 15px 10% 15px 10%;
+  overflow: scroll;
 }
 
 .brand {
