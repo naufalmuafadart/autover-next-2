@@ -63,7 +63,7 @@ export default function Signup() {
               <small>Password tidak cocok</small>
             </div>
 
-            <Button text="Login" className={`${style.btnSubmit} w-100`} />
+            <Button text="Sign Up" className={`${style.btnSubmit} w-100`} />
 
             <div className={style.alternativeContainer}>
               <p className="alternative">
