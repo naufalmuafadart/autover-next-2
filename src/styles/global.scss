@@ -3,10 +3,6 @@ body {
   padding: 0;
 }
 
-section {
-  padding: 0 55px;
-}
-
 h1, p {
   margin: 0;
   padding: 0;
@@ -14,4 +10,5 @@ h1, p {
 
 #__next > section {
   margin-bottom: 85px;
+  padding: 0 55px;
 }

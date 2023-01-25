@@ -40,3 +40,6 @@ next-env.d.ts
 
 # CSS map
 *.css.map
+
+# Development resource
+/public/images/_development

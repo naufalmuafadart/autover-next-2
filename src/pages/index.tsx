@@ -4,6 +4,7 @@ import Navbar from '../components/organism/Navbar';
 import Jumbotron from '../components/organism/Jumbotron';
 import Tutorial from "@/components/organism/Tutorial";
 import SearchCar from "@/components/organism/SearchCar";
+import CarList from "@/components/organism/CarList";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Jumbotron />
       <Tutorial />
       <SearchCar />
+      <CarList />
     </>
   );
 }
