@@ -2,30 +2,13 @@ import Image from 'next/image';
 import React from 'react';
 import style from '../styles/pages/index.module.css';
 import HTMLHead from '@/components/Head';
-import Button from '@/components/atom/Button';
+import Navbar from '../components/organism/Navbar';
 
 export default function Home() {
-  const onLoginButtonClick = () => {
-    window.location.href = '/login';
-  };
-  const onSignUpButtonClick = () => {
-    window.location.href = '/signup';
-  };
-
   return (
     <>
       <HTMLHead title="Autover" />
-      <section id="s-navbar" className={style.sNavbar}>
-        <nav className="d-flex jc-space-between ai-center h-100">
-          <div className="left-side">
-            <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
-          </div>
-          <div className="right-side">
-            <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
-            <Button text="Daftar" className="button-secondary" onClick={onSignUpButtonClick} />
-          </div>
-        </nav>
-      </section>
+      <Navbar />
       <section id="s-jumbotron" className={`${style.sJumbotron} d-grid`}>
         <div className={`left-side ${style.jumbotronLeftSide}`}>
           <div className="d-flex flex-column w-100 h-100 jc-center ai-start">
