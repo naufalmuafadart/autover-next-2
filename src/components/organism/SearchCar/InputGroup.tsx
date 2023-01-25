@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import styles from './style/input_group.module.css';
 import Icon from '@/components/atom/Icon';
+import styles from './style/input_group.module.css';
 
 interface InputGroupProps {
   id: string;

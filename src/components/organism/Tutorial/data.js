@@ -1,4 +1,4 @@
-export default {
+const data = {
   renter: [
     {
       orderNumber: 1,
@@ -44,3 +44,5 @@ export default {
     },
   ],
 };
+
+export default data;

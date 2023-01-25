@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import style from '../../../styles/component/organism/tutorial.module.css';
 import Button from '@/components/atom/Button';
 import ListItem from '@/components/organism/Tutorial/ListItem';
+import style from '../../../styles/component/organism/tutorial.module.css';
 import data from './data';
 
 export default function Tutorial() {

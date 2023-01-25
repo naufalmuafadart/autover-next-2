@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '@/components/atom/Button';
-import styles from '../../../styles/component/organism/search_car.module.css';
 import Separator from '@/components/organism/SearchCar/Separator';
 import InputGroup from '@/components/organism/SearchCar/InputGroup';
+import styles from '../../../styles/component/organism/search_car.module.css';
 
 export default function SearchCar() {
   return (
