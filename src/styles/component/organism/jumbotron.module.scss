@@ -1,7 +1,7 @@
 .sJumbotron {
   height: 435px;
   grid-template-columns: 1fr 1fr;
-  background: linear-gradient(180deg, rgb(0, 50, 160) 0%, rgba(0, 50, 160, 0.35) 100%);
+  background: linear-gradient(180deg, rgba(0,50,160,1) 0%, rgba(0,50,160,0.35) 100%);
   color: white;
 }
 
@@ -17,5 +17,3 @@
 .jumbotronText {
   font-size: 24px;
 }
-
-/*# sourceMappingURL=index.module.css.map */
