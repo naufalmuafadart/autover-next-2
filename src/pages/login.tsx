@@ -2,15 +2,13 @@ import React from 'react';
 import Head from '@/components/Head';
 import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
-import localFont from '@next/font/local';
 import Button from '@/components/atom/Button';
+import fonts from '@/pages/font/font';
 import { signIn } from '@/services/auth';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-
-const michroma = localFont({ src: './font/Michroma/Michroma-Regular.ttf' });
 
 interface LoginProps {
   router: NextRouter;
@@ -144,7 +142,7 @@ class Login extends React.Component<LoginProps, LoginState> {
             <form className="d-flex flex-column ai-center">
               <div className={`${style.brand} d-flex jc-start ai-center`}>
                 <Image src="/images/logo.png" alt="Logo" width={70} height={70} className={style.logo} />
-                <p className={`${michroma.className} ${style.brandText}`}>AUTOVER</p>
+                <p className={`${fonts.michroma.className} ${style.brandText}`}>AUTOVER</p>
               </div>
 
               <h1 className={style.h1}>Login</h1>
