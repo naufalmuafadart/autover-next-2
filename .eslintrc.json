@@ -23,6 +23,9 @@
     "rules": {
         "react/jsx-filename-extension": "off",
         "import/no-extraneous-dependencies": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "camelcase": "off",
+        "no-alert": "off",
+        "jsx-a11y/label-has-associated-control": "off"
     }
 }

@@ -18,7 +18,6 @@ form .group-column input {
   width: 100%;
 }
 form .group-column small {
-  display: inherit;
   position: absolute;
   right: 0;
   bottom: -16px;

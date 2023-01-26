@@ -4,8 +4,9 @@ import cx from 'classnames';
 interface ButtonInterface {
   text: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: any;
   isSecondary?: boolean;
+  type?: 'submit' | 'button';
 }
 
 export default function Button(props: Partial<ButtonInterface>) {
@@ -14,6 +15,7 @@ export default function Button(props: Partial<ButtonInterface>) {
     className = '',
     onClick = () => {},
     isSecondary = false,
+    type = 'button',
   } = props;
 
   const classItem = cx({
@@ -22,7 +24,7 @@ export default function Button(props: Partial<ButtonInterface>) {
 
   return (
     <button
-      type="button"
+      type={type}
       className={`${className} ${classItem}`}
       onClick={onClick}
     >
