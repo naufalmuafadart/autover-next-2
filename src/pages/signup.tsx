@@ -4,7 +4,7 @@ import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
 import localFont from '@next/font/local';
 import Button from '@/components/atom/Button';
-import signUp from '@/services/auth';
+import {signUp} from '@/services/auth';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
@@ -75,6 +75,13 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     body.style.display = 'flex';
     body.style.justifyContent = 'center';
     body.style.height = '100vh';
+  }
+
+  componentWillUnmount() {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.backgroundColor = 'inherit';
+    body.style.display = 'inherit';
+    body.style.height = 'inherit';
   }
 
   onFullNameChange(event: React.ChangeEvent<HTMLInputElement>) {
