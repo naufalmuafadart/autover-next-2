@@ -5,6 +5,7 @@ import style from '@/styles/pages/renter/checkout.module.css';
 import Image from 'next/image';
 import Button from '@/components/atom/Button';
 import CheckoutFormPaymentMethodBadge from '@/components/atom/CheckoutFormPaymentMethodBadge';
+import Head from '@/components/Head';
 
 export default function Checkout() {
   const [paymentMethodId, setPaymentMethodId] = useState('xx');
@@ -16,6 +17,7 @@ export default function Checkout() {
 
   return (
     <>
+      <Head title="Checkout" />
       <Navbar isLogin />
       <hr />
       <div className={style.container}>
