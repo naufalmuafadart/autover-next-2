@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import style from '@/styles/component/organism/navbar.module.css';
 import Button from '@/components/atom/Button';
@@ -12,6 +12,21 @@ interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
   const { isLogin } = props;
   const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
+  const [narrowWidth, setIsNarrowWidth] = useState(false);
+
+  const onWindowResize = () => {
+    const width = window.innerWidth;
+    if (width <= 800) {
+      setIsNarrowWidth(true);
+    } else {
+      setIsNarrowWidth(false);
+    }
+  };
+
+  useEffect(() => {
+    onWindowResize();
+    window.addEventListener('resize', onWindowResize);
+  });
 
   const onLoginButtonClick = () => {
     window.location.href = '/login';
@@ -42,23 +57,50 @@ export default function Navbar(props: NavbarProps) {
                 classItem={style.userIcon}
                 onMouseEnter={onIconUserMouseEnter}
               />
-            ) : (
+            ) : null
+          }
+          {
+            !isLogin && !narrowWidth ? (
               <>
                 <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
                 <Button text="Daftar" onClick={onSignUpButtonClick} isSecondary />
               </>
-            )
+            ) : null
+          }
+          {
+            !isLogin && narrowWidth ? (
+              <Icon
+                icon="menu"
+                classItem={style.userIcon}
+                onMouseEnter={onIconUserMouseEnter}
+              />
+            ) : null
           }
         </div>
       </nav>
       <div className={style.navMenu} style={{ display: isMenuDisplayed ? 'inherit' : 'none' }}>
         <ul className={style.navMenuUl}>
-          <li className={style.navMenuUlLi}>
-            <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
-          </li>
-          <li className={style.navMenuUlLi}>
-            <Link href="/" style={{ color: 'black' }}>Logout</Link>
-          </li>
+          {
+            isLogin ? (
+              <>
+                <li className={style.navMenuUlLi}>
+                  <Link href="/signup" style={{ color: 'black' }}>Daftar</Link>
+                </li>
+                <li className={style.navMenuUlLi}>
+                  <Link href="/login" style={{ color: 'black' }}>Login</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className={style.navMenuUlLi}>
+                  <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
+                </li>
+                <li className={style.navMenuUlLi}>
+                  <Link href="/" style={{ color: 'black' }}>Logout</Link>
+                </li>
+              </>
+            )
+          }
         </ul>
       </div>
     </section>

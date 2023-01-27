@@ -7,6 +7,7 @@ interface IconProps {
   classItem?: string;
   isDisplayed?: boolean;
   onMouseEnter: () => void;
+  withBorder?: boolean;
 }
 
 export default function Icon(props: Partial<IconProps>) {
@@ -15,11 +16,24 @@ export default function Icon(props: Partial<IconProps>) {
     classItem = '',
     isDisplayed = true,
     onMouseEnter = () => {},
+    withBorder = false,
   } = props;
 
   const customClassItem = cx({
     'd-none': !isDisplayed,
   });
+
+  const withBorderStyle = {
+    border: '',
+    borderRadius: '',
+    padding: '',
+  };
+
+  if (withBorder) {
+    withBorderStyle.border = '1px solid black';
+    withBorderStyle.borderRadius = '5px';
+    withBorderStyle.padding = '3px';
+  }
 
   return (
     <Image
@@ -29,6 +43,7 @@ export default function Icon(props: Partial<IconProps>) {
       height={36}
       className={`${classItem} ${customClassItem}`}
       onMouseEnter={onMouseEnter}
+      style={withBorder ? withBorderStyle : {}}
     />
   );
 }
