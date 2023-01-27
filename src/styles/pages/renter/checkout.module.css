@@ -1,0 +1,19 @@
+.container {
+  padding: 0 20% 20px 20%;
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 850px) {
+  .container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media only screen and (max-width: 625px) {
+  .container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/*# sourceMappingURL=checkout.module.css.map */
