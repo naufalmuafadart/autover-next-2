@@ -84,19 +84,19 @@ export default function Navbar(props: NavbarProps) {
             isLogin ? (
               <>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/signup" style={{ color: 'black' }}>Daftar</Link>
+                  <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
                 </li>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/login" style={{ color: 'black' }}>Login</Link>
+                  <Link href="/" style={{ color: 'black' }}>Logout</Link>
                 </li>
               </>
             ) : (
               <>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
+                  <Link href="/signup" style={{ color: 'black' }}>Daftar</Link>
                 </li>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/" style={{ color: 'black' }}>Logout</Link>
+                  <Link href="/login" style={{ color: 'black' }}>Login</Link>
                 </li>
               </>
             )
