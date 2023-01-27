@@ -3,7 +3,7 @@ import Head from '@/components/Head';
 import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
 import Button from '@/components/atom/Button';
-import fonts from '@/pages/font/font';
+import fonts from '@/fonts';
 import { signIn } from '@/services/auth';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';

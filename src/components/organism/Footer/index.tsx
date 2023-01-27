@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import style from '@/styles/component/organism/footer.module.css';
-import fonts from '@/pages/font/font';
+import fonts from '@/fonts';
 
 export default function Footer() {
   return (

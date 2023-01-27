@@ -3,12 +3,14 @@ import Head from '@/components/Head';
 import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
 import Button from '@/components/atom/Button';
-import fonts from '@/pages/font/font';
+import fonts from '@/fonts';
 import { signUp } from '@/services/auth';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+
+// const michroma = localFont({ src: '@/pages/Michroma/Michroma-Regular.ttf' });
 
 interface SignUpProps {
   router: NextRouter;

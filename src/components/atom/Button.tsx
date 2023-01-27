@@ -24,7 +24,7 @@ export default function Button(props: Partial<ButtonInterface>) {
 
   return (
     <button
-      type={type}
+      type={type === 'submit' ? 'submit' : 'button'}
       className={`${className} ${classItem}`}
       onClick={onClick}
     >
