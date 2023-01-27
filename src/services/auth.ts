@@ -6,7 +6,7 @@ export async function signUp({
 }: signUpPayload) {
   try {
     const response = await axios.post(
-      'http://localhost:3000/auth/signup',
+      `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/auth/signup`,
       {
         full_name, phone_number, email, password,
       },
@@ -23,7 +23,7 @@ export async function signIn({
 }: signInPayload) {
   try {
     const response = await axios.post(
-      'http://localhost:3000/auth/signin',
+      `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/auth/signin`,
       {
         email, password,
       },
