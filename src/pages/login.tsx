@@ -103,7 +103,7 @@ class Login extends React.Component<LoginProps, LoginState> {
         const { accessToken, refreshToken } = response.data;
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('refreshToken', refreshToken);
-        router.push('/');
+        await router.push('/renter');
       } else if (response.message.toLowerCase().includes('email')) {
         toast.error('Email tidak terdaftar');
         this.setState({
