@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <HTMLHead title="Autover" />
-      <Navbar />
+      <Navbar isLogin={false} />
       <Jumbotron />
       <Tutorial />
       <SearchCar />

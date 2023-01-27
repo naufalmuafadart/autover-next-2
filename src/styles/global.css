@@ -25,4 +25,8 @@ h1, p {
   padding: 0 55px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=global.css.map */
