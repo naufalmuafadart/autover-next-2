@@ -9,6 +9,9 @@ import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+// @ts-ignore
+import Cookies from 'js-cookie';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
 
 interface LoginProps {
   router: NextRouter;
@@ -101,8 +104,8 @@ class Login extends React.Component<LoginProps, LoginState> {
         toast.success('Berhasil login');
 
         const { accessToken, refreshToken } = response.data;
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('refreshToken', refreshToken);
+        Cookies.set('accessToken', accessToken);
+        Cookies.set('refreshToken', refreshToken);
         await router.push('/renter');
       } else if (response.message.toLowerCase().includes('email')) {
         toast.error('Email tidak terdaftar');
@@ -214,3 +217,20 @@ function LoginWithRouter(props: LoginWithRouterProps) {
 }
 
 export default LoginWithRouter;
+
+export async function getServerSideProps(props: propsGetServerSide) {
+  const { accessToken, refreshToken } = props.req.cookies;
+
+  if (accessToken && refreshToken) {
+    return {
+      redirect: {
+        destination: '/renter',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}

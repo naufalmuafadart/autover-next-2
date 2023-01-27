@@ -11,3 +11,12 @@ export interface signInPayload {
   email: string;
   password: string;
 }
+
+export interface GetServerSideProps {
+  req: {
+    cookies : {
+      accessToken: string;
+      refreshToken: string;
+    }
+  };
+}

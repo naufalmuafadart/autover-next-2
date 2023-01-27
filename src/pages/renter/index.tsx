@@ -5,6 +5,7 @@ import Jumbotron from '@/components/organism/Jumbotron';
 import SearchCar from '@/components/organism/SearchCar';
 import CarList from '@/components/organism/CarList';
 import Footer from '@/components/organism/Footer';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
 
 export default function Home() {
   return (
@@ -18,4 +19,21 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getServerSideProps(props: propsGetServerSide) {
+  const { accessToken, refreshToken } = props.req.cookies;
+
+  if (!accessToken && !refreshToken) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 }

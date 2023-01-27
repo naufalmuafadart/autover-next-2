@@ -9,8 +9,7 @@ import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-
-// const michroma = localFont({ src: '@/pages/Michroma/Michroma-Regular.ttf' });
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
 
 interface SignUpProps {
   router: NextRouter;
@@ -329,3 +328,20 @@ function SignUpWithRouter(props: SignUpWithRouterProps) {
 }
 
 export default SignUpWithRouter;
+
+export async function getServerSideProps(props: propsGetServerSide) {
+  const { accessToken, refreshToken } = props.req.cookies;
+
+  if (accessToken && refreshToken) {
+    return {
+      redirect: {
+        destination: '/renter',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
