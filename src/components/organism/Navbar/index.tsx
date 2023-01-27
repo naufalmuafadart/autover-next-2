@@ -4,6 +4,8 @@ import style from '@/styles/component/organism/navbar.module.css';
 import Button from '@/components/atom/Button';
 import Icon from '@/components/atom/Icon';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 interface NavbarProps {
   isLogin: boolean;
@@ -13,6 +15,8 @@ export default function Navbar(props: NavbarProps) {
   const { isLogin } = props;
   const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
   const [narrowWidth, setIsNarrowWidth] = useState(false);
+
+  const router = useRouter();
 
   const onWindowResize = () => {
     const width = window.innerWidth;
@@ -41,6 +45,12 @@ export default function Navbar(props: NavbarProps) {
 
   const onNavbarMouseLeave = () => {
     setIsMenuDisplayed(false);
+  };
+
+  const onLogout = () => {
+    Cookies.remove('accessToken');
+    Cookies.remove('refreshToken');
+    router.push('/login');
   };
 
   return (
@@ -87,7 +97,9 @@ export default function Navbar(props: NavbarProps) {
                   <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
                 </li>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/" style={{ color: 'black' }}>Logout</Link>
+                  {/* eslint-disable-next-line max-len */}
+                  {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                  <p className={style.logoutText} onClick={onLogout}>Logout</p>
                 </li>
               </>
             ) : (

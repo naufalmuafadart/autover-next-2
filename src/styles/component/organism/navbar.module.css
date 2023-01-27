@@ -31,4 +31,8 @@
   cursor: pointer;
 }
 
+.logoutText:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=navbar.module.css.map */

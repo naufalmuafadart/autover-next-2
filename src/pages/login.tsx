@@ -9,7 +9,6 @@ import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-// @ts-ignore
 import Cookies from 'js-cookie';
 import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
 
