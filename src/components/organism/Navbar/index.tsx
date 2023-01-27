@@ -6,6 +6,7 @@ import Icon from '@/components/atom/Icon';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 interface NavbarProps {
   isLogin: boolean;
@@ -47,10 +48,11 @@ export default function Navbar(props: NavbarProps) {
     setIsMenuDisplayed(false);
   };
 
-  const onLogout = () => {
+  const onLogout = async () => {
     Cookies.remove('accessToken');
     Cookies.remove('refreshToken');
-    router.push('/login');
+    toast.success('Berhasil logout');
+    await router.push('/login');
   };
 
   return (
