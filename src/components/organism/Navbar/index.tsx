@@ -96,7 +96,7 @@ export default function Navbar(props: NavbarProps) {
             isLogin ? (
               <>
                 <li className={style.navMenuUlLi}>
-                  <Link href="/" style={{ color: 'black' }}>Menu Host</Link>
+                  <Link href="/host" style={{ color: 'black' }}>Menu Host</Link>
                 </li>
                 <li className={style.navMenuUlLi}>
                   {/* eslint-disable-next-line max-len */}
