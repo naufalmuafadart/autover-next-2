@@ -18,11 +18,9 @@
 }
 
 .p {
-  font-size: 32px;
+  font-size: 1.5rem;
 }
 
 .small {
-  font-size: 20px;
-}
-
-/*# sourceMappingURL=list_item.module.css.map */
+  font-size: 1rem;
+}/*# sourceMappingURL=list_item.module.css.map */
