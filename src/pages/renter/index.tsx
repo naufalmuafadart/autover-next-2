@@ -11,12 +11,14 @@ export default function Home() {
   return (
     <>
       <HTMLHead title="Autover" />
-      <Navbar isLogin />
-      <Jumbotron />
-      <SearchCar />
-      <CarList />
-      <hr />
-      <Footer />
+      <div id="mainContent">
+        <Navbar isLogin />
+        <Jumbotron />
+        <SearchCar />
+        <CarList />
+        <hr />
+        <Footer />
+      </div>
     </>
   );
 }
