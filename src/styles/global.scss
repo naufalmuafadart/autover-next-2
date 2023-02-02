@@ -28,3 +28,15 @@ h1, p {
 a {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 700px) {
+  #mainDocument #mainContent > section {
+    padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #mainDocument #mainContent > section {
+    padding: 0 15px;
+  }
+}
