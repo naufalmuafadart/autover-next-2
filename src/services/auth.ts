@@ -1,17 +1,17 @@
 import axios from 'axios';
 import qs from 'qs';
-import { signInPayload } from '@/services/dataTypes';
+import { postAuthPayload } from '@/services/dataTypes';
 
-export async function signIn({
+export async function postAuth({
   email, password,
-}: signInPayload) {
+}: postAuthPayload) {
   try {
     const data = qs.stringify({
       email, password,
     });
     const config = {
       method: 'post',
-      url: `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/auth/signin`,
+      url: `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/auth/`,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
@@ -27,7 +27,7 @@ export async function signIn({
 
 export async function signInX({
   email, password,
-}: signInPayload) {
+}: postAuthPayload) {
   try {
     const data = qs.stringify({
       email, password,

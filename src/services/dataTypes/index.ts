@@ -7,7 +7,7 @@ export interface postUserPayload {
   password: string;
 }
 
-export interface signInPayload {
+export interface postAuthPayload {
   email: string;
   password: string;
 }

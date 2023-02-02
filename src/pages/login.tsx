@@ -4,13 +4,13 @@ import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
 import Button from '@/components/atom/Button';
 import fonts from '@/fonts';
-import { signIn } from '@/services/auth';
+import { postAuth } from '@/services/auth';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
-import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide, postAuthPayload } from '@/services/dataTypes';
 
 interface LoginProps {
   router: NextRouter;
@@ -83,7 +83,7 @@ class Login extends React.Component<LoginProps, LoginState> {
     const {
       email, password,
     } = this.state;
-    const data = {
+    const data: postAuthPayload = {
       email,
       password,
     };
@@ -98,7 +98,7 @@ class Login extends React.Component<LoginProps, LoginState> {
     } else if (password.length < 8) {
       toast.error('Password minimal terdiri dari 8 karakter');
     } else {
-      const response = await signIn(data);
+      const response = await postAuth(data);
       if (response.status === 'success') {
         toast.success('Berhasil login');
 
