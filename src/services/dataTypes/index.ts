@@ -1,6 +1,6 @@
 /* eslint-disable semi */
 
-export interface signUpPayload {
+export interface postUserPayload {
   full_name: string;
   phone_number: string;
   email: string;

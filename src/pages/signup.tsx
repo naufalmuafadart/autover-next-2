@@ -4,12 +4,12 @@ import style from '@/styles/pages/login.module.css';
 import Image from 'next/image';
 import Button from '@/components/atom/Button';
 import fonts from '@/fonts';
-import { signUp } from '@/services/auth';
+import { postUser } from '@/services/user';
 import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide, postUserPayload } from '@/services/dataTypes';
 
 interface SignUpProps {
   router: NextRouter;
@@ -131,7 +131,7 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     const {
       full_name, phone_number, email, password, retype_password,
     } = this.state;
-    const data = {
+    const data: postUserPayload = {
       full_name,
       phone_number,
       email,
@@ -154,7 +154,8 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     } else if (password !== retype_password) {
       toast.error('password tidak sesuai');
     } else {
-      const response = await signUp(data);
+      data.phone_number = data.phone_number.substring(1, data.phone_number.length);
+      const response = await postUser(data);
       if (response.status === 'success') {
         toast.success('Berhasil mendaftar akun');
         await router.push('/login');
