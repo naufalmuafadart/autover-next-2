@@ -36,4 +36,12 @@
 
 .d-none {
   display: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }/*# sourceMappingURL=layouting.css.map */

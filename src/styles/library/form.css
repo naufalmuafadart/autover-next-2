@@ -22,6 +22,33 @@ form .group-column small {
   right: 0;
   bottom: -16px;
 }
+form .group-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+form .group-row .group-row-row {
+  display: flex;
+  justify-content: space-between;
+}
+form .group-row input, form .group-row select {
+  width: 75%;
+}
+form .group-row small {
+  color: red;
+  text-align: end;
+}
 form small {
   color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  form .group-row .group-row-row {
+    flex-direction: column;
+  }
+  form .group-row .group-row-row input, form .group-row .group-row-row select {
+    width: 100%;
+  }
 }/*# sourceMappingURL=form.css.map */
