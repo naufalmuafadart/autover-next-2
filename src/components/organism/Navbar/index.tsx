@@ -59,7 +59,9 @@ export default function Navbar(props: NavbarProps) {
     <section id="s-navbar" className={style.sNavbar} onMouseLeave={onNavbarMouseLeave}>
       <nav className="d-flex jc-space-between ai-center h-100">
         <div className="left-side">
-          <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
+          <Link href="/">
+            <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
+          </Link>
         </div>
         <div className="right-side d-flex jc-start ai-center">
           {
