@@ -12,6 +12,10 @@ export interface postAuthPayload {
   password: string;
 }
 
+export interface postHostPayload {
+  district_id: string;
+}
+
 export interface district {
   _id: string;
   name: string;
