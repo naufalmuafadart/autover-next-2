@@ -57,67 +57,69 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <section id="s-navbar" className={style.sNavbar} onMouseLeave={onNavbarMouseLeave}>
-      <nav className="d-flex jc-space-between ai-center h-100">
-        <div className="left-side">
-          <Link href="/">
-            <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
-          </Link>
+      <div id="navbarContainer" className={style.navbarContainer}>
+        <nav className="d-flex jc-space-between ai-center h-100">
+          <div className="left-side">
+            <Link href="/">
+              <Image src="/images/navbar-brand.png" alt="Navbar brand" width={100} height={40} />
+            </Link>
+          </div>
+          <div className="right-side d-flex jc-start ai-center">
+            {
+              isLogin ? (
+                <Icon
+                  icon="user"
+                  classItem={style.userIcon}
+                  onMouseEnter={onIconUserMouseEnter}
+                />
+              ) : null
+            }
+            {
+              !isLogin && !narrowWidth ? (
+                <>
+                  <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
+                  <Button text="Daftar" onClick={onSignUpButtonClick} isSecondary />
+                </>
+              ) : null
+            }
+            {
+              !isLogin && narrowWidth ? (
+                <Icon
+                  icon="menu"
+                  classItem={style.userIcon}
+                  onMouseEnter={onIconUserMouseEnter}
+                />
+              ) : null
+            }
+          </div>
+        </nav>
+        <div className={style.navMenu} style={{ display: isMenuDisplayed ? 'inherit' : 'none' }}>
+          <ul className={style.navMenuUl}>
+            {
+              isLogin ? (
+                <>
+                  <li className={style.navMenuUlLi}>
+                    <Link href="/host" style={{ color: 'black' }}>Menu Host</Link>
+                  </li>
+                  <li className={style.navMenuUlLi}>
+                    {/* eslint-disable-next-line max-len */}
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                    <p className={style.logoutText} onClick={onLogout}>Logout</p>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className={style.navMenuUlLi}>
+                    <Link href="/signup" style={{ color: 'black' }}>Daftar</Link>
+                  </li>
+                  <li className={style.navMenuUlLi}>
+                    <Link href="/login" style={{ color: 'black' }}>Login</Link>
+                  </li>
+                </>
+              )
+            }
+          </ul>
         </div>
-        <div className="right-side d-flex jc-start ai-center">
-          {
-            isLogin ? (
-              <Icon
-                icon="user"
-                classItem={style.userIcon}
-                onMouseEnter={onIconUserMouseEnter}
-              />
-            ) : null
-          }
-          {
-            !isLogin && !narrowWidth ? (
-              <>
-                <Button text="Masuk" className={style.signUpButton} onClick={onLoginButtonClick} />
-                <Button text="Daftar" onClick={onSignUpButtonClick} isSecondary />
-              </>
-            ) : null
-          }
-          {
-            !isLogin && narrowWidth ? (
-              <Icon
-                icon="menu"
-                classItem={style.userIcon}
-                onMouseEnter={onIconUserMouseEnter}
-              />
-            ) : null
-          }
-        </div>
-      </nav>
-      <div className={style.navMenu} style={{ display: isMenuDisplayed ? 'inherit' : 'none' }}>
-        <ul className={style.navMenuUl}>
-          {
-            isLogin ? (
-              <>
-                <li className={style.navMenuUlLi}>
-                  <Link href="/host" style={{ color: 'black' }}>Menu Host</Link>
-                </li>
-                <li className={style.navMenuUlLi}>
-                  {/* eslint-disable-next-line max-len */}
-                  {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
-                  <p className={style.logoutText} onClick={onLogout}>Logout</p>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className={style.navMenuUlLi}>
-                  <Link href="/signup" style={{ color: 'black' }}>Daftar</Link>
-                </li>
-                <li className={style.navMenuUlLi}>
-                  <Link href="/login" style={{ color: 'black' }}>Login</Link>
-                </li>
-              </>
-            )
-          }
-        </ul>
       </div>
     </section>
   );

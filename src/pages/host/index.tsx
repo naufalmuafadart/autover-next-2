@@ -3,16 +3,66 @@ import Navbar from '@/components/organism/Navbar';
 import HTMLHead from '@/components/Head';
 import { getCheckIsAHost } from '@/services/host';
 import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import HostAside from '@/components/organism/HostAside/HostAside';
 
 export default function Host() {
   return (
-    <>
+    <div id="hostPage">
       <HTMLHead title="Host" />
-      <div id="mainContent">
-        <Navbar isLogin />
-        <h1>Host</h1>
+      <HostAside activeTab="overview" />
+      <div className="hrContainer">
+        <hr />
       </div>
-    </>
+      <Navbar isLogin />
+      <div id="mainContent" className="mainContentHost">
+        <div className="mainContentContainer">
+          <h1>Content 1</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content</h1>
+          <h1>Content Last</h1>
+        </div>
+      </div>
+    </div>
   );
 }
 

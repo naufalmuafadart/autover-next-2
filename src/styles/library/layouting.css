@@ -44,4 +44,54 @@
 
 .float-right {
   float: right;
-}/*# sourceMappingURL=layouting.css.map */
+}
+
+#hostPage #s-navbar {
+  position: fixed;
+  width: 100vw;
+  margin-top: 0;
+}
+#hostPage .hrContainer {
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  padding-top: 81px;
+  z-index: 1;
+}
+#hostPage .hrContainer hr {
+  width: 100vw;
+  height: 1px;
+  color: black;
+  background-color: black;
+  z-index: 1;
+}
+
+.mainContentHost {
+  padding-left: 200px;
+  padding-top: 80px;
+  height: calc(100vh - 79px);
+}
+.mainContentHost .mainContentContainer {
+  padding: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  .mainContentHost {
+    padding-left: 150px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mainContentHost {
+    padding-left: 46px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .mainContentHost {
+    padding-left: 0;
+  }
+  .mainContentContainer {
+    padding-bottom: 80px;
+  }
+}
+
+/*# sourceMappingURL=layouting.css.map */

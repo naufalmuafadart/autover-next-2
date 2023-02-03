@@ -1,6 +1,13 @@
 .sNavbar {
   height: 80px;
   margin-bottom: 0 !important;
+  position: sticky;
+  z-index: 2;
+  background-color: white;
+}
+
+.navbarContainer {
+  height: 80px;
   position: relative;
 }
 
@@ -12,7 +19,7 @@
   position: absolute;
   background-color: white;
   border-radius: 5px;
-  right: 55px;
+  right: 0px;
   top: 60px;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
   padding: 0 15px;
@@ -33,4 +40,6 @@
 
 .logoutText:hover {
   cursor: pointer;
-}/*# sourceMappingURL=navbar.module.css.map */
+}
+
+/*# sourceMappingURL=navbar.module.css.map */
