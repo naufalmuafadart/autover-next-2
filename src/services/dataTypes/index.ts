@@ -12,6 +12,13 @@ export interface postAuthPayload {
   password: string;
 }
 
+export interface district {
+  _id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface GetServerSideProps {
   req: {
     cookies : {

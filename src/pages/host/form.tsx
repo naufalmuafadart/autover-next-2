@@ -3,8 +3,16 @@ import HTMLHead from '@/components/Head';
 import Navbar from '@/components/organism/Navbar';
 import Button from '@/components/atom/Button';
 import style from '@/styles/pages/host/form.module.css';
+import { getDistricts } from '@/services/district';
+import { GetServerSideProps as propsGetServerSide, district } from '@/services/dataTypes';
 
-export default function Host() {
+interface HostProps {
+  districts: Array<district>;
+}
+
+export default function Host(props: HostProps) {
+  const { districts } = props;
+
   return (
     <>
       <HTMLHead title="Form Host" />
@@ -17,12 +25,14 @@ export default function Host() {
             <div className="group-row">
               <div className="group-row-row">
                 <label>Kecamatan</label>
-                <select>
-                  <option value="id">Antapani</option>
-                  <option value="id">Buah batu</option>
+                <select name="district_id">
+                  {
+                    districts.map((d: district) => (
+                      <option key={d._id} value={d._id}>{d.name}</option>
+                    ))
+                  }
                 </select>
               </div>
-              <small>Error message</small>
             </div>
 
             <Button text="Submit" type="submit" className="float-right" />
@@ -31,4 +41,23 @@ export default function Host() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(props: propsGetServerSide) {
+  const { accessToken, refreshToken } = props.req.cookies;
+
+  if (!accessToken && !refreshToken) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+
+  const { data: districts } = await getDistricts();
+
+  return {
+    props: { districts },
+  };
 }
