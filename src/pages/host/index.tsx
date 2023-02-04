@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/organism/Navbar';
 import HTMLHead from '@/components/Head';
 import { getCheckIsAHost } from '@/services/host';
-import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 import HostAside from '@/components/organism/HostAside/HostAside';
 
 export default function Host() {

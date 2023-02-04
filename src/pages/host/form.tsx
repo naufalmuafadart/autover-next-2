@@ -6,7 +6,9 @@ import style from '@/styles/pages/host/form.module.css';
 import { useRouter } from 'next/router';
 import { getDistricts } from '@/services/district';
 import { postHost, getCheckIsAHost } from '@/services/host';
-import { GetServerSideProps as propsGetServerSide, district } from '@/services/dataTypes';
+import { district } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
+import { postHostPayload } from '@/services/dataTypes/payload';
 
 interface HostProps {
   districts: Array<district>;
@@ -24,7 +26,7 @@ export default function Host(props: HostProps) {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = { district_id: districtId };
+    const data: postHostPayload = { district_id: districtId };
     const responseData = await postHost(data, accessToken);
     if (responseData.status === 'success') {
       await router.push('/host');

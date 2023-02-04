@@ -1,6 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
-import { postUserPayload } from '@/services/dataTypes';
+import { postUserPayload } from '@/services/dataTypes/payload';
 
 export async function postUser({
   full_name, phone_number, email, password,

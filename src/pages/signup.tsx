@@ -9,7 +9,8 @@ import Small from '@/components/atom/Small';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-import { GetServerSideProps as propsGetServerSide, postUserPayload } from '@/services/dataTypes';
+import { postUserPayload } from '@/services/dataTypes/payload';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 
 interface SignUpProps {
   router: NextRouter;

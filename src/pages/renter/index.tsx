@@ -5,7 +5,7 @@ import Jumbotron from '@/components/organism/Jumbotron';
 import SearchCar from '@/components/organism/SearchCar';
 import CarList from '@/components/organism/CarList';
 import Footer from '@/components/organism/Footer';
-import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
-import { postAuthPayload } from '@/services/dataTypes';
+import { postAuthPayload } from '@/services/dataTypes/payload';
 
 export async function postAuth({
   email, password,

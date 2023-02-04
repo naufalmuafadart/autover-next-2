@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { postHostPayload } from '@/services/dataTypes';
+import { postHostPayload } from '@/services/dataTypes/payload';
 
 export async function getCheckIsAHost(token: String) {
   try {

@@ -6,7 +6,7 @@ import HTMLHead from '@/components/Head';
 import Jumbotron from '@/components/organism/Jumbotron';
 import Navbar from '@/components/organism/Navbar';
 import Footer from '@/components/organism/Footer';
-import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 
 export default function Home() {
   return (

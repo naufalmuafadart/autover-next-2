@@ -10,7 +10,8 @@ import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
-import { GetServerSideProps as propsGetServerSide, postAuthPayload } from '@/services/dataTypes';
+import { postAuthPayload } from '@/services/dataTypes/payload';
+import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 
 interface LoginProps {
   router: NextRouter;
