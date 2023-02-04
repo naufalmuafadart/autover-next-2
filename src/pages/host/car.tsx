@@ -3,14 +3,14 @@ import { getCheckIsAHost } from '@/services/host';
 import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 import HostPageTemplate from '@/components/page/HostPageTemplate';
 
-export default function Host() {
+export default function Car() {
   return (
     <HostPageTemplate
-      pageTitle="Overview host"
-      activeTab="overview"
+      pageTitle="Mobil"
+      activeTab="car"
     >
       <>
-        <h1>Overview page</h1>
+        <h1>Car page</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
       </>

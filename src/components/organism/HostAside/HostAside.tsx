@@ -124,7 +124,7 @@ export default function HostAside(props: HostAsideProps) {
         onMouseEnter={onProfileSVGMouseEnter}
         onMouseLeave={onProfileSVGMouseLeave}
       >
-        <Link href="/host">
+        <Link href="/host/profile">
           <ProfileSVG color={profileSVGColor} />
           <p>Profil</p>
         </Link>
@@ -136,7 +136,7 @@ export default function HostAside(props: HostAsideProps) {
         onMouseEnter={onCarSVGMouseEnter}
         onMouseLeave={onCarSVGMouseLeave}
       >
-        <Link href="/host">
+        <Link href="/host/car">
           <CarSVG color={carSVGColor} />
           <p>Mobil</p>
         </Link>
@@ -148,7 +148,7 @@ export default function HostAside(props: HostAsideProps) {
         onMouseEnter={onTransactionSVGMouseEnter}
         onMouseLeave={onTransactionSVGMouseLeave}
       >
-        <Link href="/host">
+        <Link href="/host/transaction">
           <TransactionSVG color={transactionSVGColor} />
           <p>Transaksi</p>
         </Link>
@@ -160,7 +160,7 @@ export default function HostAside(props: HostAsideProps) {
         onMouseEnter={onBalanceSVGMouseEnter}
         onMouseLeave={onBalanceSVGMouseLeave}
       >
-        <Link href="/host">
+        <Link href="/host/balance">
           <WalletSVG color={balanceSVGColor} />
           <p>Saldo</p>
         </Link>
