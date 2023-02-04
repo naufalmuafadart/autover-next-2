@@ -1,8 +1,5 @@
 import React from 'react';
-
-interface SVGProps {
-  color: string;
-}
+import { SVGProps } from '@/services/dataTypes/props';
 
 export default function WalletSVG(props: SVGProps) {
   const { color } = props;

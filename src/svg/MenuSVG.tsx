@@ -1,8 +1,5 @@
 import React from 'react';
-
-interface SVGProps {
-  color: string;
-}
+import { SVGProps } from '@/services/dataTypes/props';
 
 export default function MenuSVG(props: SVGProps) {
   const { color } = props;
