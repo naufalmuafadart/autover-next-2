@@ -1,7 +1,7 @@
 import React from 'react';
 import { SVGProps } from '@/services/dataTypes/props';
 
-export default function ProfileSVG(props: SVGProps) {
+export default function ProfileSVG(props: Partial<SVGProps>) {
   const { color } = props;
   return (
     <svg

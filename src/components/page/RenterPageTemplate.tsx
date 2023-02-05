@@ -4,36 +4,41 @@ import Aside from '@/components/organism/Aside/Aside';
 import HostHRContainer from '@/components/molecule/HostHRContainer';
 import Navbar from '@/components/organism/Navbar';
 
-interface HostPageTemplateProps {
+interface RenterPageTemplateProps {
+  isLogin: boolean;
   pageTitle: string;
-  activeTab: 'overview' | 'profile' | 'car' | 'transaction' | 'balance';
+  activeTab?: 'overview' | 'profile' | 'car' | 'transaction' | 'balance';
   children: ReactComponentElement<any>;
 }
 
-export default function HostPageTemplate(props: HostPageTemplateProps) {
-  const { pageTitle, activeTab, children } = props;
+export default function RenterPageTemplate(props: Partial<RenterPageTemplateProps>) {
+  const {
+    isLogin, pageTitle, activeTab = 'overview', children,
+  } = props;
+
   const [isAsideShow, setIsShowAside] = useState(false);
 
   const showAside = () => setIsShowAside(true);
   const hideAside = () => setIsShowAside(false);
 
   return (
-    <div id="hostPage">
-      <HTMLHead title={pageTitle} />
+    <div id="renterPage">
+      <HTMLHead title={pageTitle!} />
       {
         isAsideShow ? (
-          <Aside activeTab={activeTab} isLogin isHost />
+          <Aside
+            activeTab={activeTab}
+            isLogin={isLogin}
+          />
         ) : null
       }
       <HostHRContainer />
       <Navbar
-        isLogin
-        isHost
         isAsideShow={isAsideShow}
         showAside={showAside}
         hideAside={hideAside}
       />
-      <div id="mainContent" className="mainContentHost">
+      <div id="mainContent" className="mainContentRenter">
         <div className="mainContentContainer">
           { children }
         </div>

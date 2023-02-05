@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import style from '@/styles/component/organism/host_aside.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 import MenuSVG from '@/svg/MenuSVG';
 import ProfileSVG from '@/svg/ProfileSVG';
 import CarSVG from '@/svg/CarSVG';
 import TransactionSVG from '@/svg/TransactionSVG';
 import WalletSVG from '@/svg/WalletSVG';
+import style from '@/styles/component/organism/aside.module.css';
+import LogoutSVG from '@/svg/LogoutSVG';
+import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
-interface HostAsideProps {
-  activeTab: 'overview' | 'profile' | 'car' | 'transaction' | 'balance';
+interface AsideHostContentProps {
+  activeTab: string;
 }
 
-export default function HostAside(props: HostAsideProps) {
+export default function AsideHostContent(props: AsideHostContentProps) {
   const { activeTab } = props;
+
   const [menuSVGColor, setMenuSVGColor] = useState(
     activeTab === 'overview' ? '#0032A0' : '#000000',
   );
@@ -29,6 +33,8 @@ export default function HostAside(props: HostAsideProps) {
   const [balanceSVGColor, setBalanceSVGColor] = useState(
     activeTab === 'balance' ? '#0032A0' : '#000000',
   );
+  const [logoutSVGColor, setLogoutSVGColor] = useState('#000000');
+  const router = useRouter();
 
   const onMenuSVGMouseEnter = () => {
     if (activeTab !== 'overview') {
@@ -40,6 +46,14 @@ export default function HostAside(props: HostAsideProps) {
     if (activeTab !== 'overview') {
       setMenuSVGColor('#0000000');
     }
+  };
+
+  const getAsideItemClassName = (itemName: String) => {
+    const cn = style.asideItem;
+    if (itemName === activeTab) {
+      return `${cn} ${style.active}`;
+    }
+    return cn;
   };
 
   const onProfileSVGMouseEnter = () => {
@@ -90,22 +104,23 @@ export default function HostAside(props: HostAsideProps) {
     }
   };
 
-  const getAsideItemClassName = (itemName: String) => {
-    const cn = style.asideItem;
-    if (itemName === activeTab) {
-      return `${cn} ${style.active}`;
-    }
-    return cn;
+  const onLogoutSVGMouseEnter = () => {
+    setLogoutSVGColor('#0032a0bf');
+  };
+
+  const onLogoutSVGMouseLeave = () => {
+    setLogoutSVGColor('#000000');
+  };
+
+  const onLogout = async () => {
+    Cookies.remove('accessToken');
+    Cookies.remove('refreshToken');
+    toast.success('Berhasil logout');
+    await router.push('/login');
   };
 
   return (
-    <aside id="aside" className={style.aside}>
-      <div className={style.asideHeader}>
-        <Image src="/images/icon/ic_user.png" width={80} height={80} alt="ic_user" />
-        <p>M Naufal Muafa</p>
-        <p>mnaufalmuafa.dart@gmail.com</p>
-      </div>
-
+    <>
       {/* Overview */}
       <div
         className={getAsideItemClassName('overview')}
@@ -165,6 +180,23 @@ export default function HostAside(props: HostAsideProps) {
           <p>Saldo</p>
         </Link>
       </div>
-    </aside>
+
+      <hr />
+
+      {/* Logout */}
+      {/* eslint-disable-next-line max-len */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+      <div
+        className={getAsideItemClassName('balance')}
+        onMouseEnter={onLogoutSVGMouseEnter}
+        onMouseLeave={onLogoutSVGMouseLeave}
+        onClick={onLogout}
+      >
+        <div className={style.asideItemDiv}>
+          <LogoutSVG color={logoutSVGColor} />
+          <p style={{ color: logoutSVGColor }}>Logout</p>
+        </div>
+      </div>
+    </>
   );
 }

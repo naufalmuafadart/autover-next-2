@@ -20,7 +20,7 @@ h1, p {
   padding: 0;
 }
 
-#mainDocument #mainContent > section, #s-navbar {
+#mainDocument #mainContent > .mainContentContainer > section, #s-navbar {
   margin-bottom: 85px;
   padding: 0 55px;
 }
@@ -30,13 +30,13 @@ a {
 }
 
 @media only screen and (max-width: 700px) {
-  #mainDocument #mainContent > section, #s-navbar{
+  #mainDocument #mainContent > .mainContentContainer > section, #s-navbar{
     padding: 0 30px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #mainDocument #mainContent > section, #s-navbar {
+  #mainDocument #mainContent > .mainContentContainer > section, #s-navbar {
     padding: 0 15px;
   }
 }

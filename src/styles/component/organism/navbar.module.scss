@@ -15,29 +15,6 @@
   margin-right: 30px;
 }
 
-.navMenu {
-  position: absolute;
-  background-color: white;
-  border-radius: 5px;
-  right: 0px;
-  top: 60px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
-  padding: 0 15px;
-}
-
-.navMenuUl {
-  list-style: none;
-  padding-left: 0;
-}
-
-.navMenuUlLi {
-  margin-bottom: 5px;
-}
-
 .userIcon:hover {
-  cursor: pointer;
-}
-
-.logoutText:hover {
   cursor: pointer;
 }

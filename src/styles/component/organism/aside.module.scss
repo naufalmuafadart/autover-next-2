@@ -1,5 +1,7 @@
 .aside {
   display: flex;
+  float: right;
+  right: 0;
   flex-direction: column;
   background-color: white;
   margin-top: 80px;
@@ -36,11 +38,24 @@
   margin-bottom: 10px;
   text-decoration: none;
   color: black;
+}
+
+.asideItem a, .asideItemDiv {
   padding-left: 5px;
+}
+
+.asideItemDiv:hover {
+  cursor: pointer;
 }
 
 .asideItem svg {
   margin-right: 10px;
+}
+
+.asideItemDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .active p {
@@ -55,38 +70,26 @@
   .aside {
     width: 150px;
   }
+
   .asideHeader {
     display: none;
   }
 }
+
 @media only screen and (max-width: 700px) {
   .aside {
-    width: 46px;
+    width: calc(5px + 36px + 5px);
   }
+
   .asideItem p {
     display: none;
   }
+
   .aside:hover {
     width: 200px;
   }
+
   .aside:hover .asideItem p {
     display: inherit;
   }
 }
-@media only screen and (max-width: 600px) {
-  .aside {
-    height: 80px;
-    width: 100vw;
-    margin-top: calc(100vh - 80px);
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .aside:hover {
-    width: 100vw;
-  }
-  .aside:hover .asideItem p {
-    display: none;
-  }
-}
-
-/*# sourceMappingURL=host_aside.module.css.map */

@@ -53,7 +53,7 @@
 
 // Host
 
-#hostPage {
+#hostPage, #renterPage {
   #s-navbar {
     position: fixed;
     width: 100vw;
@@ -76,34 +76,26 @@
   }
 }
 
-.mainContentHost {
-  padding-left: 200px;
+#mainContent {
+  padding-right: 0;
   padding-top: 80px;
   height: calc(100vh - 79px);
-
-  .mainContentContainer {
-    padding: 5px;
-  }
 }
 
 @media only screen and (max-width: 800px) {
-  .mainContentHost {
-    padding-left: 150px;
+  .mainContent {
+    padding-right: 150px;
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .mainContentHost {
-    padding-left: calc(5px + 36px + 5px);
+  .mainContent {
+    padding-right: calc(5px + 36px + 5px);
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .mainContentHost {
-    padding-left: 0;
-  }
-
-  .mainContentContainer {
-    padding-bottom: 80px !important;
+  .mainContent {
+    padding-right: 0;
   }
 }

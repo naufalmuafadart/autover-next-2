@@ -2,26 +2,27 @@ import React from 'react';
 import Tutorial from '@/components/organism/Tutorial';
 import SearchCar from '@/components/organism/SearchCar';
 import CarList from '@/components/organism/CarList';
-import HTMLHead from '@/components/Head';
 import Jumbotron from '@/components/organism/Jumbotron';
-import Navbar from '@/components/organism/Navbar';
 import Footer from '@/components/organism/Footer';
+import RenterPageTemplate from '@/components/page/RenterPageTemplate';
 import { GetServerSideProps as propsGetServerSide } from '@/services/dataTypes/props';
 
 export default function Home() {
   return (
-    <>
-      <HTMLHead title="Autover" />
-      <main id="mainContent">
-        <Navbar isLogin={false} />
+    <RenterPageTemplate
+      isLogin={false}
+      pageTitle="Autover"
+      activeTab="overview"
+    >
+      <>
         <Jumbotron />
         <Tutorial />
         <SearchCar />
         <CarList />
         <hr />
         <Footer />
-      </main>
-    </>
+      </>
+    </RenterPageTemplate>
   );
 }
 
