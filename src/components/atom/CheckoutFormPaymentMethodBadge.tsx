@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '@/styles/component/atom/CheckoutFormPaymentMethodBadge.module.css';
+import style from '../../styles/component/atom/CheckoutFormPaymentMethodBadge.module.css';
 
 interface BadgeProps {
   mode?: 'inherit' | 'selected' | 'disabled';

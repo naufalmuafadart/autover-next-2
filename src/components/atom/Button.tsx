@@ -1,7 +1,7 @@
 import React from 'react';
-import cx from 'classnames';
+import style from '../../styles/component/atom/Button.module.css';
 
-interface ButtonInterface {
+export interface ButtonInterface {
   text: string;
   className?: string;
   onClick?: any;
@@ -18,14 +18,12 @@ export default function Button(props: Partial<ButtonInterface>) {
     type = 'button',
   } = props;
 
-  const classItem = cx({
-    'button-secondary': isSecondary,
-  });
+  const classItem = isSecondary ? style.buttonSecondary : '';
 
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
-      className={`${className} ${classItem}`}
+      className={`${style.button} ${className} ${classItem}`}
       onClick={onClick}
     >
       { text }

@@ -6,7 +6,7 @@ interface IconProps {
   icon: string;
   classItem?: string;
   isDisplayed?: boolean;
-  onMouseEnter: () => void;
+  onMouseEnter?: () => void;
   withBorder?: boolean;
 }
 

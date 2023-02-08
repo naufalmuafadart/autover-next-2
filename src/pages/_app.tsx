@@ -1,6 +1,5 @@
 import React from 'react';
 import '@/styles/global.css';
-import '@/styles/library/button.css';
 import '@/styles/library/color.css';
 import '@/styles/library/font.css';
 import '@/styles/library/form.css';

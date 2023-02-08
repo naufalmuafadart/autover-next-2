@@ -1,6 +1,6 @@
-@use "../value.scss";
+@use "../../value.scss";
 
-button {
+.button {
   background-color: value.$primary-color;
   border: 2px solid value.$primary-color;
   color: white;
@@ -12,12 +12,12 @@ button {
   border-radius: 15px;
 }
 
-.button-secondary {
+.buttonSecondary {
   background-color: white;
   border: 2px solid value.$primary-color;
   color: value.$primary-color;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
 }

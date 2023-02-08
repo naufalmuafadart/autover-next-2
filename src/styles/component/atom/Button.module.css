@@ -1,4 +1,4 @@
-button {
+.button {
   background-color: #0032A0;
   border: 2px solid #0032A0;
   color: white;
@@ -10,12 +10,14 @@ button {
   border-radius: 15px;
 }
 
-.button-secondary {
+.buttonSecondary {
   background-color: white;
   border: 2px solid #0032A0;
   color: #0032A0;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
-}/*# sourceMappingURL=button.css.map */
+}
+
+/*# sourceMappingURL=Button.module.css.map */
