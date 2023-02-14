@@ -11,11 +11,12 @@ import RenterPageTemplate from '@/components/page/RenterPageTemplate';
 
 interface HostProps {
   districts: Array<district>;
+  accessToken: string;
   refreshToken: string;
 }
 
 export default function FormHost(props: HostProps) {
-  const { districts, refreshToken } = props;
+  const { districts, accessToken, refreshToken } = props;
   const [districtId, setDistrictId] = useState(districts[0]._id);
   const router = useRouter();
 
@@ -26,7 +27,7 @@ export default function FormHost(props: HostProps) {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data: postHostPayload = { district_id: districtId };
-    const responseData = await postHost(data, refreshToken);
+    const responseData = await postHost(data, accessToken, refreshToken);
     if (responseData.status === 'success') {
       await router.push('/host');
     }
@@ -78,7 +79,7 @@ export async function getServerSideProps(props: propsGetServerSide) {
     };
   }
 
-  const responseData = await getCheckIsAHost(refreshToken);
+  const responseData = await getCheckIsAHost(accessToken, refreshToken);
   if (responseData.data) { // jika sudah menjadi host
     return {
       redirect: {
@@ -91,6 +92,6 @@ export async function getServerSideProps(props: propsGetServerSide) {
   const { data: districts } = await getDistricts();
 
   return {
-    props: { districts, refreshToken },
+    props: { districts, accessToken, refreshToken },
   };
 }

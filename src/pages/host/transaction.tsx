@@ -30,7 +30,7 @@ export async function getServerSideProps(props: propsGetServerSide) {
     };
   }
 
-  const responseData = await getCheckIsAHost(refreshToken);
+  const responseData = await getCheckIsAHost(accessToken, refreshToken);
   if (!responseData.data) { // jika bukan host
     return {
       redirect: {
