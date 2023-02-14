@@ -35,9 +35,11 @@ export default function Icon(props: Partial<IconProps>) {
     withBorderStyle.padding = '3px';
   }
 
+  const endPoint = process.env.NEXT_PUBLIC_NEXT_END_POINT;
+
   return (
     <Image
-      src={`/images/icon/ic_${icon}.png`}
+      src={`${endPoint}/images/icon/ic_${icon}.png`}
       alt="Icon"
       width={36}
       height={36}
