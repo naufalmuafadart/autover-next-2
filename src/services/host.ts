@@ -1,13 +1,18 @@
 import axios from 'axios';
 import { postHostPayload } from '@/services/dataTypes/payload';
+import { putAuth } from '@/services/auth';
+import Cookies from 'js-cookie';
 
-export async function getCheckIsAHost(token: String) {
+export async function getCheckIsAHost(refreshToken: string) {
   try {
+    const accessToken = await putAuth(refreshToken);
+    const url = `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/host/check`;
     const config = {
-      method: 'GET',
-      url: `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/host/check`,
+      method: 'get',
+      maxBodyLength: Infinity,
+      url,
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     };
     const response = await axios(config);
@@ -18,14 +23,16 @@ export async function getCheckIsAHost(token: String) {
   }
 }
 
-export async function postHost(payload: postHostPayload, token: String) {
+export async function postHost(payload: postHostPayload, refreshToken: string) {
   try {
+    await putAuth(refreshToken);
+    const token = Cookies.get('accessToken');
+    const url = `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/host`;
     const config = {
       method: 'post',
-      url: `${process.env.NEXT_PUBLIC_EXPRESS_END_POINT}/api/host`,
+      url,
       headers: {
         Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
       },
       data: payload,
     };
